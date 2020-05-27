@@ -171,7 +171,6 @@ window.addEventListener("hashchange", funcRef, false);
 - react-router在匹配路由的时候,匹配到就停止，不再往下进行匹配
 - 包在Route列表外层
 
-
 ```
 import { Route, Switch } from "react-router";
 
