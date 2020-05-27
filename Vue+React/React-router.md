@@ -22,15 +22,12 @@
 ##### BrowserRouter、HashRouter、Route、Link
 
 ```
-
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
-
 ```
 -  react-router提供了两个路由的容器：BrowserRouter、HashRouter，所有的路由操作都必须定义在该组件下面
 -  HashRouter是用锚点实现SPA
@@ -47,7 +44,6 @@ import {
 路由切换中，children属性都会执行，如果路径不匹配，route属性match就会返回null;通过它可以封装Link组件，实现一些样式激活、动画效果等。
 
 ```
-
 import React from "react";
 import ReactDOM from "react-dom";
 import {
@@ -78,7 +74,9 @@ ReactDOM.render(
   </Router>,
   node
 );
-This could also be useful for animations:<Route
+
+// This could also be useful for animations:
+<Route
   children={({ match, ...rest }) => (
     {/* Animate will always render, so you can use lifecycles
         to animate its child in and out */}
@@ -87,7 +85,6 @@ This could also be useful for animations:<Route
     </Animate>
   )}
 />
-
 ```
 
 ##### render func
@@ -95,7 +92,6 @@ This could also be useful for animations:<Route
 路径匹配的时候就会执行render（函数式组件）,其接受的routeProps 包含hsitory(函数式跳转用)、match(路由传参用)、location等信息。
 
 ```
-
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -129,7 +125,6 @@ ReactDOM.render(
   </Router>,
   node
 );
-
 ```
 
 ##### 使用hash(hashchange)原生的方式去实现一个SPA
@@ -137,7 +132,6 @@ ReactDOM.render(
 1. 当地址栏hash改变的时候，会自动触发
 
 ```
-
 window.hashchange = () => {
     console.log(location.hash)
     // 根据拿到的hash值，去加载对应的页面内容
@@ -150,26 +144,19 @@ window.hashchange = () => {
     
     document.querySelector('#container').InnerHTML = html
 }
-
 ```
 
 2. 或在body上绑定事件
 
 ```
-
 <body onhashchange="funcRef();">
-
-
 ```
 
 
 3. 若body上还绑定了别的事件，为了不覆盖掉已绑定的事件，可以使用函数 "addEventListener"。
 
 ```
-
 window.addEventListener("hashchange", funcRef, false);
-
-
 ```
 
 ##### 嵌套路由和路由参数
@@ -186,7 +173,6 @@ window.addEventListener("hashchange", funcRef, false);
 
 
 ```
-
 import { Route, Switch } from "react-router";
 
 let routes = (
@@ -205,7 +191,6 @@ let routes = (
     </Route>
   </Switch>
 );
-
 ```
 
 ##### Redirect
