@@ -3,7 +3,7 @@ my daliay web interview and learning notes.
 
 #### remote master
 
-###### github:https://github.com/wuchongming/learning-notes.git
+###### github: https://github.com/wuchongming/learning-notes.git
 
 ###### 码云：https://gitee.com/mooncakesay20wcm/learning-notes.git
 
